@@ -116,7 +116,7 @@ p { max-width:600px }
   opacity:.055;
 }
 @media(max-width:768px){
-  .bg-grid{opacity:.08}
+  .bg-grid{opacity:.1}
 }
 
 
