@@ -113,7 +113,7 @@ p { max-width:600px }
   position:fixed; top:var(--header-h); left:0; right:0; bottom:0; z-index:0; pointer-events:none;
   background-image:linear-gradient(var(--acc) 1px,transparent 1px),linear-gradient(90deg,var(--acc) 1px,transparent 1px);
   background-size:80px 80px;
-  opacity:.055;
+  opacity:.1;
 }
 @media(max-width:768px){
   .bg-grid{opacity:.1}
