@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRIAGE Icon Options v2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070912;color:#E8ECF2;font-family:'Outfit',sans-serif;padding:40px}
+h1{font-size:14px;letter-spacing:3px;color:#3A7CA5;margin-bottom:30px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:700px}
+.cell{background:#0F131E;padding:40px;display:flex;flex-direction:column;align-items:center;gap:16px;border-top:2px solid rgba(58,124,165,.12);transition:all .3s}
+.cell:hover{border-top-color:rgba(58,124,165,.4)}
+.cell svg{width:64px;height:64px}
+.label{font-size:9px;font-weight:600;letter-spacing:2px;color:#3A7CA5;opacity:.5}
+.desc{font-size:10px;color:#E8ECF2;opacity:.25;text-align:center;line-height:1.6}
+</style>
+</head>
+<body>
+
+<h1>TRIAGE ICON OPTIONS V2</h1>
+
+<div class="grid">
+
+  <!-- 1. COMPASS - navigating through dimensions -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <circle cx="24" cy="24" r="20" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+      <circle cx="24" cy="24" r="12" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+      <path d="M24 4V12M24 36V44M4 24H12M36 24H44" stroke="#3A7CA5" stroke-width="1" opacity=".25"/>
+      <path d="M24 18L28 24L24 30L20 24Z" stroke="#3A7CA5" stroke-width="1.5" opacity=".7" fill="none"/>
+      <circle cx="24" cy="24" r="1.5" fill="#3A7CA5" opacity=".6"/>
+    </svg>
+    <span class="label">1 · COMPASS</span>
+    <span class="desc">Navigating the right path</span>
+  </div>
+
+  <!-- 2. FILTER/FUNNEL - assessment filtering -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <line x1="6" y1="8" x2="42" y2="8" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+      <line x1="6" y1="8" x2="18" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="42" y1="8" x2="30" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="18" y1="24" x2="18" y2="38" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+      <line x1="30" y1="24" x2="30" y2="38" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+      <line x1="18" y1="38" x2="30" y2="38" stroke="#3A7CA5" stroke-width="1.5" opacity=".6"/>
+      <circle cx="24" cy="42" r="2" fill="#3A7CA5" opacity=".5"/>
+    </svg>
+    <span class="label">2 · FILTER</span>
+    <span class="desc">From complexity to clarity</span>
+  </div>
+
+  <!-- 3. ALIGNMENT - 4 bars aligning to center -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <line x1="6" y1="12" x2="42" y2="12" stroke="#3A7CA5" stroke-width="1.5" opacity=".3"/>
+      <line x1="10" y1="20" x2="38" y2="20" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="14" y1="28" x2="34" y2="28" stroke="#3A7CA5" stroke-width="1.5" opacity=".55"/>
+      <line x1="18" y1="36" x2="30" y2="36" stroke="#3A7CA5" stroke-width="1.5" opacity=".7"/>
+      <circle cx="24" cy="12" r="2" stroke="#3A7CA5" stroke-width="1" opacity=".3"/>
+      <circle cx="24" cy="20" r="2" stroke="#3A7CA5" stroke-width="1" opacity=".4"/>
+      <circle cx="24" cy="28" r="2" stroke="#3A7CA5" stroke-width="1" opacity=".55"/>
+      <circle cx="24" cy="36" r="2" fill="#3A7CA5" opacity=".6"/>
+    </svg>
+    <span class="label">3 · ALIGNMENT</span>
+    <span class="desc">Dimensions narrowing to one decision</span>
+  </div>
+
+  <!-- 4. CIRCUIT - connected decision paths -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <rect x="8" y="8" width="32" height="32" rx="2" stroke="#3A7CA5" stroke-width="1.5" opacity=".25"/>
+      <line x1="8" y1="24" x2="18" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="30" y1="24" x2="40" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="24" y1="8" x2="24" y2="18" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <line x1="24" y1="30" x2="24" y2="40" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+      <rect x="18" y="18" width="12" height="12" rx="1" stroke="#3A7CA5" stroke-width="1.5" opacity=".65"/>
+      <circle cx="24" cy="24" r="2" fill="#3A7CA5" opacity=".6"/>
+      <circle cx="8" cy="24" r="2" fill="#3A7CA5" opacity=".3"/>
+      <circle cx="40" cy="24" r="2" fill="#3A7CA5" opacity=".3"/>
+      <circle cx="24" cy="8" r="2" fill="#3A7CA5" opacity=".3"/>
+      <circle cx="24" cy="40" r="2" fill="#3A7CA5" opacity=".3"/>
+    </svg>
+    <span class="label">4 · CIRCUIT</span>
+    <span class="desc">Integrated decision architecture</span>
+  </div>
+
+  <!-- 5. PRISM - one input, structured output -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <path d="M24 6L40 38H8Z" stroke="#3A7CA5" stroke-width="1.5" opacity=".45" fill="none"/>
+      <path d="M24 16L32 34H16Z" stroke="#3A7CA5" stroke-width="1.5" opacity=".3" fill="none"/>
+      <line x1="24" y1="6" x2="24" y2="2" stroke="#3A7CA5" stroke-width="1.5" opacity=".3"/>
+      <line x1="8" y1="38" x2="4" y2="42" stroke="#3A7CA5" stroke-width="1" opacity=".2"/>
+      <line x1="40" y1="38" x2="44" y2="42" stroke="#3A7CA5" stroke-width="1" opacity=".2"/>
+      <circle cx="24" cy="24" r="2" fill="#3A7CA5" opacity=".5"/>
+    </svg>
+    <span class="label">5 · PRISM</span>
+    <span class="desc">One framework, structured output</span>
+  </div>
+
+  <!-- 6. SCAN - diagnostic assessment -->
+  <div class="cell">
+    <svg viewBox="0 0 48 48" fill="none">
+      <rect x="8" y="6" width="32" height="36" rx="2" stroke="#3A7CA5" stroke-width="1.5" opacity=".3"/>
+      <line x1="14" y1="14" x2="34" y2="14" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+      <line x1="14" y1="22" x2="28" y2="22" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+      <line x1="14" y1="30" x2="32" y2="30" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+      <circle cx="36" cy="14" r="2" fill="#3A7CA5" opacity=".5"/>
+      <circle cx="30" cy="22" r="2" fill="#3A7CA5" opacity=".4"/>
+      <circle cx="34" cy="30" r="2" fill="#3A7CA5" opacity=".5"/>
+      <line x1="6" y1="36" x2="42" y2="36" stroke="#3A7CA5" stroke-width="2" opacity=".15"/>
+    </svg>
+    <span class="label">6 · SCAN</span>
+    <span class="desc">Decision-grade diagnostic</span>
+  </div>
+
+</div>
+
+</body>
+</html>
