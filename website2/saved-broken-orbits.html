@@ -1,0 +1,47 @@
+<!-- Saved: Broken Orbits Animation for future use -->
+<!-- Canvas animation showing fragmented/broken orbital rings -->
+<canvas id="brokenOrbits" width="800" height="800" style="width:100%;max-width:460px;aspect-ratio:1" aria-hidden="true"></canvas>
+<script>
+(function(){
+  var c=document.getElementById('brokenOrbits');
+  if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=800,H=800,cx=W/2,cy=H/2;
+  var col=[58,124,165];
+  var time=0;
+  function rgba(a){return 'rgba('+col[0]+','+col[1]+','+col[2]+','+a+')';}
+  var arcs=[
+    {r:280,start:0.2,end:1.4,w:4.5,op:0.35,speed:0.003,dir:1},
+    {r:280,start:2.8,end:4.0,w:4.5,op:0.3,speed:0.003,dir:1},
+    {r:280,start:5.0,end:5.8,w:4.5,op:0.2,speed:0.003,dir:1},
+    {r:180,start:0.8,end:2.2,w:4.5,op:0.4,speed:-0.004,dir:-1},
+    {r:180,start:3.5,end:4.8,w:4.5,op:0.3,speed:-0.004,dir:-1},
+    {r:180,start:5.6,end:6.2,w:4.5,op:0.2,speed:-0.004,dir:-1}
+  ];
+  var nodes=[
+    {angle:0.8,r:280,size:6,op:0.5},
+    {angle:2.5,r:280,size:5,op:0.35},
+    {angle:4.5,r:280,size:6,op:0.45},
+    {angle:1.5,r:180,size:5,op:0.4},
+    {angle:3.8,r:180,size:6,op:0.5},
+    {angle:5.9,r:180,size:5,op:0.3}
+  ];
+  function frame(){
+    ctx.clearRect(0,0,W,H);time+=0.012;
+    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,300);
+    g.addColorStop(0,rgba(0.06));g.addColorStop(0.5,rgba(0.02));g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.beginPath();ctx.arc(cx,cy,300,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    for(var i=0;i<arcs.length;i++){var a=arcs[i];var offset=time*a.speed*60;var pulse=Math.sin(time*0.5+i)*0.04;ctx.beginPath();ctx.arc(cx,cy,a.r,a.start+offset,a.end+offset);ctx.strokeStyle=rgba(a.op+pulse);ctx.lineWidth=a.w;ctx.stroke();}
+    ctx.beginPath();ctx.arc(cx,cy,80,0.3,2.5);ctx.strokeStyle=rgba(0.35);ctx.lineWidth=4;ctx.stroke();
+    ctx.beginPath();ctx.arc(cx,cy,80,3.5,5.5);ctx.strokeStyle=rgba(0.25);ctx.lineWidth=4;ctx.stroke();
+    ctx.beginPath();ctx.arc(cx,cy,40,1.0,3.0);ctx.strokeStyle=rgba(0.3);ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(cx,cy,40,4.2,5.8);ctx.strokeStyle=rgba(0.2);ctx.lineWidth=3;ctx.stroke();
+    for(var i=0;i<nodes.length;i++){var n=nodes[i];var a=n.angle+time*arcs[i%arcs.length].speed*60;var px=cx+Math.cos(a)*n.r;var py=cy+Math.sin(a)*n.r;var pulse=Math.sin(time*0.8+i*1.2)*0.1;var ng=ctx.createRadialGradient(px,py,0,px,py,n.size*3.5);ng.addColorStop(0,rgba((n.op+pulse)*0.4));ng.addColorStop(1,'rgba(0,0,0,0)');ctx.beginPath();ctx.arc(px,py,n.size*3.5,0,Math.PI*2);ctx.fillStyle=ng;ctx.fill();ctx.beginPath();ctx.arc(px,py,n.size,0,Math.PI*2);ctx.fillStyle=rgba(n.op+pulse);ctx.fill();}
+    var cp=0.3+Math.sin(time*0.6)*0.1;ctx.beginPath();ctx.arc(cx,cy,8,0,Math.PI*2);ctx.fillStyle=rgba(cp);ctx.fill();
+    var pT=(time*0.12)%1;var pR=40+pT*150;var pA=0.08*(1-pT);ctx.beginPath();ctx.arc(cx,cy,pR,0,Math.PI*2);ctx.strokeStyle=rgba(pA);ctx.lineWidth=1.5;ctx.stroke();
+    requestAnimationFrame(frame);
+  }
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){time=0;frame();}
+  else{requestAnimationFrame(frame);}
+})();
+</script>

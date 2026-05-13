@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siaxen - MedTech Venture Studio</title>
+<meta name="description" content="Siaxen replaces fragmented MedTech commercialization with synchronized architecture. We co-found ventures from university IP through equity-based partnership and the TRIAGE framework.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://siaxen.com/">
+<meta property="og:title" content="Siaxen - MedTech Venture Studio">
+<meta property="og:description" content="We replace fragmentation with architecture. Every venture we build is designed for investability from Day One.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://siaxen.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Siaxen","url":"https://siaxen.com","description":"MedTech venture studio replacing fragmented commercialization with synchronized architecture.","address":{"@type":"PostalAddress","addressLocality":"Brussels","addressCountry":"BE"}}
+</script>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header" role="banner">
+<div class="site-header__inner">
+  <a href="/" class="logo" aria-label="Siaxen Home">
+    <img src="Siaxen wordmark.svg" alt="Siaxen" width="110" height="24">
+  </a>
+  <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+    <a href="/about" class="nav__link">About</a>
+    <a href="/inventors" class="nav__link">Inventors</a>
+    <a href="/investors" class="nav__link">Investors</a>
+    <a href="/incubators" class="nav__link">Incubators</a>
+    <a href="/partners" class="nav__link">Partners</a>
+    <a href="/dna" class="nav__link">DNA</a>
+    <a href="/triage" class="nav__link">TRIAGE&#8482;</a>
+    <a href="/insights" class="nav__link">Insights</a>
+  </nav>
+  <div class="header-cta">
+    <a href="/contact" class="header-cta__primary">Contact us</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+</header>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__links">
+    <a href="/about" class="mobile-nav__link">About</a>
+    <a href="/inventors" class="mobile-nav__link">Inventors</a>
+    <a href="/investors" class="mobile-nav__link">Investors</a>
+    <a href="/incubators" class="mobile-nav__link">Incubators</a>
+    <a href="/partners" class="mobile-nav__link">Partners</a>
+    <a href="/dna" class="mobile-nav__link">DNA</a>
+    <a href="/triage" class="mobile-nav__link">TRIAGE&#8482;</a>
+    <a href="/insights" class="mobile-nav__link">Insights</a>
+  </div>
+  <div class="mobile-nav__bottom">
+    <a href="/contact" class="mobile-nav__cta">Contact us</a>
+  </div>
+</div>
+
+<!-- ══ 1. HERO ══ -->
+<section class="hero-section" style="position:relative;overflow:hidden;height:100svh;display:flex;align-items:center;justify-content:center;padding:60px 0 20px;margin:0;box-sizing:border-box;background:#070912">
+
+<!-- Animated hero grid -->
+<canvas id="heroGridAnim" style="position:absolute;inset:0;width:100%;height:100%;z-index:0" aria-hidden="true"></canvas>
+
+<div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(20px,4vw,60px);width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,3vw,40px);position:relative;z-index:2">
+  <div class="hero-text" style="max-width:520px">
+    <h1 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.1;margin-bottom:20px">
+      <span>Where MedTech breakthroughs.</span><br>
+      <span style="color:#3A7CA5">Made investable.</span>
+    </h1>
+    <p style="font-size:clamp(15px,1.3vw,18px);color:#E8ECF2;line-height:1.8;margin-bottom:28px;max-width:460px">Siaxen is a MedTech venture studio that builds investor-ready companies from patented science.</p>
+    <div class="hero-btns" style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="/contact" class="btn btn-primary">Start a conversation</a>
+      <a href="/triage" class="btn btn-secondary">Explore TRIAGE&#8482;</a>
+    </div>
+  </div>
+  <div class="hero-visual" style="display:flex;align-items:center;justify-content:center">
+    <canvas id="heroCanvas" style="width:100%;max-width:780px;aspect-ratio:1" width="1000" height="1000" aria-hidden="true"></canvas>
+  </div>
+</div>
+
+<style>
+@media(max-width:1024px){
+  .hero-section{padding:clamp(48px,7vh,60px) 0 clamp(32px,5vh,48px)!important;align-items:center!important;height:auto!important;min-height:100svh}
+  .hero-grid{grid-template-columns:1fr!important;text-align:center;gap:clamp(16px,3vh,28px)!important;padding:0 32px!important;height:auto!important}
+  .hero-text{order:2;max-width:100%!important;margin:0!important}
+  .hero-visual{order:1;margin:0!important}
+  .hero-grid p{margin-left:auto!important;margin-right:auto!important;margin-bottom:20px!important}
+  .hero-btns{justify-content:center!important;padding:0 12px}
+  #heroCanvas{max-width:clamp(320px,48vh,420px)!important;opacity:.9!important;margin:0 auto}
+}
+@media(max-width:1024px) and (orientation:landscape) and (max-height:700px){
+  .hero-section{padding:20px 0 16px!important}
+  .hero-grid{grid-template-columns:1fr 1fr!important;text-align:left;gap:clamp(16px,3vw,40px)!important;height:auto!important;align-items:center}
+  .hero-text{order:1;max-width:480px!important}
+  .hero-visual{order:2}
+  .hero-grid p{margin-left:0!important;margin-right:0!important}
+  .hero-btns{justify-content:flex-start!important;padding:0}
+  #heroCanvas{max-width:clamp(260px,40vw,400px)!important;opacity:1!important}
+}
+@media(min-width:601px) and (max-width:1024px) and (orientation:portrait){
+  #heroCanvas{max-width:clamp(300px,44vh,420px)!important}
+}
+@media(max-width:480px){
+  .hero-section{padding:clamp(44px,6vh,56px) 0 clamp(28px,4vh,40px)!important}
+  .hero-grid{padding:0 28px!important;gap:clamp(12px,2.5vh,20px)!important}
+  .hero-btns{flex-direction:column!important;padding:0 12px!important;gap:12px!important}
+  .hero-btns .btn{width:100%;justify-content:center;text-align:center;box-sizing:border-box}
+  #heroCanvas{max-width:clamp(280px,42vh,360px)!important}
+}
+@media(max-width:480px) and (max-height:700px){
+  .hero-section{padding:40px 0 20px!important}
+  .hero-grid{gap:8px!important}
+  .hero-grid p{margin-bottom:14px!important}
+  .hero-btns{gap:10px!important}
+  #heroCanvas{max-width:clamp(240px,34vh,280px)!important}
+  .hero-text h1{font-size:clamp(28px,8vw,36px)!important;margin-bottom:14px!important}
+}
+</style>
+<script>
+(function(){
+  var canvas=document.getElementById('heroCanvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var W=1000,H=1000;
+  var cx=W/2,cy=H/2;
+  var col=[58,124,165];
+  var time=0;
+  var circles=[{r:320,opacity:0.45,width:5.5},{r:200,opacity:0.55,width:5.5}];
+  var ellipses=[{rx:380,ry:140,rotation:-20*Math.PI/180,opacity:0.38,width:5},{rx:220,ry:360,rotation:-75*Math.PI/180,opacity:0.32,width:5}];
+  var nodes=[{ellipse:0,angle:Math.PI+0.96,speed:0.002,opacity:0.85,r:8},{ellipse:0,angle:0.96,speed:0.002,opacity:0.7,r:7},{ellipse:1,angle:Math.PI*1.5+1.344,speed:-0.0028,opacity:0.8,r:8},{ellipse:1,angle:Math.PI*0.5+1.344,speed:-0.0028,opacity:0.65,r:7}];
+  function rgba(a){return 'rgba('+col[0]+','+col[1]+','+col[2]+','+a+')'}
+  function ptOnEll(ell,angle){var x=ell.rx*Math.cos(angle),y=ell.ry*Math.sin(angle);var c=Math.cos(ell.rotation),s=Math.sin(ell.rotation);return{x:cx+x*c-y*s,y:cy+x*s+y*c};}
+  function frame(){
+    ctx.clearRect(0,0,W,H);time+=0.016;
+    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,380);g.addColorStop(0,rgba(0.18));g.addColorStop(0.5,rgba(0.06));g.addColorStop(1,'rgba(0,0,0,0)');ctx.beginPath();ctx.arc(cx,cy,380,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    for(var i=0;i<circles.length;i++){ctx.beginPath();ctx.arc(cx,cy,circles[i].r,0,Math.PI*2);ctx.strokeStyle=rgba(circles[i].opacity);ctx.lineWidth=circles[i].width;ctx.stroke();}
+    for(var i=0;i<ellipses.length;i++){ctx.beginPath();ctx.ellipse(cx,cy,ellipses[i].rx,ellipses[i].ry,ellipses[i].rotation,0,Math.PI*2);ctx.strokeStyle=rgba(ellipses[i].opacity);ctx.lineWidth=ellipses[i].width;ctx.stroke();}
+    ctx.beginPath();ctx.arc(cx,cy,80,0,Math.PI*2);ctx.strokeStyle=rgba(0.6);ctx.lineWidth=6;ctx.stroke();
+    ctx.beginPath();ctx.arc(cx,cy,40,0,Math.PI*2);ctx.strokeStyle=rgba(0.45);ctx.lineWidth=4.5;ctx.stroke();
+    var pT=(time*0.18)%1;var pR=80+pT*120;var pA=0.16*(1-pT);ctx.beginPath();ctx.arc(cx,cy,pR,0,Math.PI*2);ctx.strokeStyle=rgba(pA);ctx.lineWidth=2.5;ctx.stroke();
+    for(var i=0;i<nodes.length;i++){nodes[i].angle+=nodes[i].speed*0.016*60;var pt=ptOnEll(ellipses[nodes[i].ellipse],nodes[i].angle);var ng=ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,nodes[i].r*4);ng.addColorStop(0,rgba(nodes[i].opacity*0.5));ng.addColorStop(1,'rgba(0,0,0,0)');ctx.beginPath();ctx.arc(pt.x,pt.y,nodes[i].r*4,0,Math.PI*2);ctx.fillStyle=ng;ctx.fill();ctx.beginPath();ctx.arc(pt.x,pt.y,nodes[i].r,0,Math.PI*2);ctx.fillStyle=rgba(nodes[i].opacity);ctx.fill();}
+    var cp=0.8+0.2*Math.sin(time*1.0);ctx.beginPath();ctx.arc(cx,cy,14,0,Math.PI*2);ctx.fillStyle=rgba(cp);ctx.fill();
+    requestAnimationFrame(frame);
+  }
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){time=0;frame();}else{requestAnimationFrame(frame);}
+})();
+</script>
+<script>
+(function(){
+  var c=document.getElementById('heroGridAnim');if(!c)return;var ctx=c.getContext('2d');var sp=80;var traces=[];var orbCx=0,orbCy=0,orbR=280;var headerH=72;var gridStartY=headerH+sp;
+  function updateOrbCenter(){var orb=document.getElementById('heroCanvas');if(!orb)return;var rect=orb.getBoundingClientRect();var secRect=c.parentElement.getBoundingClientRect();orbCx=rect.left+rect.width/2-secRect.left;orbCy=rect.top+rect.height/2-secRect.top;orbR=Math.min(rect.width,rect.height)*0.45;}
+  function resize(){c.width=c.parentElement.offsetWidth;c.height=c.parentElement.offsetHeight;updateOrbCenter();}
+  function allH(){var a=[];for(var y=gridStartY;y<c.height;y+=sp)a.push(y);return a;}
+  function allV(){var a=[];for(var x=sp;x<c.width;x+=sp)a.push(x);return a;}
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function init(){traces=[];var hLines=shuffle(allH());var pickedH=[];for(var i=0;i<hLines.length&&pickedH.length<3;i++){var ok=true;for(var j=0;j<pickedH.length;j++){if(Math.abs(hLines[i]-pickedH[j])<sp*3){ok=false;break;}}if(ok)pickedH.push(hLines[i]);}var vLines=shuffle(allV());var pickedV=[];for(var i=0;i<vLines.length&&pickedV.length<2;i++){var ok=true;for(var j=0;j<pickedV.length;j++){if(Math.abs(vLines[i]-pickedV[j])<sp*3){ok=false;break;}}if(ok)pickedV.push(vLines[i]);}for(var i=0;i<pickedH.length;i++){var goR=Math.random()>0.5;traces.push({type:'h',line:pickedH[i],pos:Math.random()*c.width,dir:goR?1:-1,speed:0.3+Math.random()*0.9,len:120+Math.random()*200,op:0.25+Math.random()*0.12});}for(var i=0;i<pickedV.length;i++){traces.push({type:'v',line:pickedV[i],pos:Math.random()*c.height,dir:-1,speed:0.2+Math.random()*0.7,len:120+Math.random()*200,op:0.25+Math.random()*0.12});}}
+  function newTrace(type){var W=c.width,H=c.height;var pool=type==='h'?allH():allV();shuffle(pool);var picked=-1;var gaps=[sp*3,sp*2,sp];for(var g=0;g<gaps.length&&picked===-1;g++){for(var i=0;i<pool.length;i++){var ok=true;for(var j=0;j<traces.length;j++){if(traces[j]&&traces[j].type===type&&Math.abs(traces[j].line-pool[i])<gaps[g]){ok=false;break;}}if(ok){picked=pool[i];break;}}}if(picked===-1)picked=pool[0];if(type==='h'){var goR=Math.random()>0.5;return{type:'h',line:picked,pos:goR?-(100+Math.random()*300):W+100+Math.random()*300,dir:goR?1:-1,speed:0.3+Math.random()*0.9,len:120+Math.random()*200,op:0.25+Math.random()*0.12};}else{return{type:'v',line:picked,pos:H+100+Math.random()*300,dir:-1,speed:0.2+Math.random()*0.7,len:120+Math.random()*200,op:0.25+Math.random()*0.12};}}
+  function doResize(){c.width=c.parentElement.offsetWidth;c.height=c.parentElement.offsetHeight;var header=document.querySelector('.site-header');if(header)headerH=header.offsetHeight;gridStartY=headerH+sp;updateOrbCenter();traces=[];init();}
+  if(document.readyState==='complete'){doResize();}else{window.addEventListener('load',doResize);}window.addEventListener('resize',doResize);
+  function animate(){ctx.clearRect(0,0,c.width,c.height);var W=c.width,H=c.height;var isMob=W<=768;ctx.lineWidth=isMob?1.2:1;ctx.strokeStyle=isMob?'rgba(58,124,165,0.09)':'rgba(58,124,165,0.065)';for(var y=gridStartY;y<=H;y+=sp){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}for(var x=0;x<=W;x+=sp){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(var i=0;i<traces.length;i++){var t=traces[i];if(!t)continue;t.pos+=t.speed*t.dir;var head=t.pos,tail=head-t.len*t.dir;if(t.type==='h'){var dy=Math.abs(t.line-orbCy);var closestX=Math.max(Math.min(head,tail),Math.min(Math.max(head,tail),orbCx));var dx=Math.abs(closestX-orbCx);var dist=Math.sqrt(dx*dx+dy*dy);var fadeOp=t.op;if(dist<orbR*1.3){var f=dist/(orbR*1.3);fadeOp=t.op*f*f;}if(fadeOp>0.005){var g=ctx.createLinearGradient(tail,t.line,head,t.line);g.addColorStop(0,'rgba(58,124,165,0)');g.addColorStop(0.5,'rgba(58,124,165,'+fadeOp*0.4+')');g.addColorStop(1,'rgba(58,124,165,'+fadeOp+')');ctx.beginPath();ctx.moveTo(tail,t.line);ctx.lineTo(head,t.line);ctx.strokeStyle=g;ctx.lineWidth=1.8;ctx.stroke();}if((t.dir>0&&tail>W)||(t.dir<0&&head<0))traces[i]=newTrace('h');}else{var dx=Math.abs(t.line-orbCx);var closestY=Math.max(Math.min(head,tail),Math.min(Math.max(head,tail),orbCy));var dy=Math.abs(closestY-orbCy);var dist=Math.sqrt(dx*dx+dy*dy);var fadeOp=t.op;if(dist<orbR*1.3){var f=dist/(orbR*1.3);fadeOp=t.op*f*f;}if(fadeOp>0.005){var g=ctx.createLinearGradient(t.line,tail,t.line,head);g.addColorStop(0,'rgba(58,124,165,0)');g.addColorStop(0.5,'rgba(58,124,165,'+fadeOp*0.4+')');g.addColorStop(1,'rgba(58,124,165,'+fadeOp+')');ctx.beginPath();ctx.moveTo(t.line,tail);ctx.lineTo(t.line,head);ctx.strokeStyle=g;ctx.lineWidth=1.8;ctx.stroke();}if(head<0&&tail<0)traces[i]=newTrace('v');}}requestAnimationFrame(animate);}animate();
+})();
+</script>
+</section>
+
+<!-- ══ 2. PROBLEM STATEMENT ══ -->
+<section class="section section--alt" id="problemSection" style="position:relative;overflow:hidden;padding-top:clamp(70px,9vw,110px);padding-bottom:clamp(70px,9vw,110px);background:rgba(15,19,30,.48)">
+<div class="container" style="position:relative">
+  <div class="section__header reveal" style="position:relative;z-index:1;margin-bottom:0">
+    <p class="eyebrow" style="color:#3A7CA5;font-size:14px;margin-top:0;padding-top:0">The Valley of Death</p>
+    <h2>Brilliant science.<br><span style="color:#3A7CA5">Broken system.</span></h2>
+    <p>The Valley of Death is architectural. Regulatory, clinical, market access, and capital strategies are designed in isolation with no shared system connecting them. The result is predictable: strategies contradict, timelines collapse, capital is consumed before value is created. 80% of MedTech patents never reach the market. The science is rarely the problem. The system always is.</p>
+  </div>
+  <div class="frag-mobile" id="fragMobile" aria-hidden="true">
+    <svg viewBox="0 0 300 300" fill="none" style="width:100%;max-width:360px;margin:0 auto;display:block">
+      <polygon points="43.4,38.9 108.4,33.9 112.6,80.4 47.6,85.5" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+      <rect x="206.4" y="13.9" width="51.1" height="78.8" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none" transform="matrix(0.061 -0.998 0.998 0.061 164.616 281.57)"/>
+      <rect x="27.6" y="122.7" width="59.6" height="61.7" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none" transform="matrix(0.1045 -0.9945 0.9945 0.1045 -101.292 194.594)"/>
+      <polygon points="133.2,108.6 212.1,105.6 214.4,175.8 135.5,178.8" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+      <polygon points="195.8,206.6 259.1,203.2 265.2,271.2 201.9,274.6" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+      <rect x="69.2" y="209.6" width="44.7" height="72.4" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none" transform="matrix(0.0523 -0.9986 0.9986 0.0523 -158.616 324.351)"/>
+    </svg>
+  </div>
+</div>
+</section>
+
+<style>
+.frag-mobile{display:none;margin-top:clamp(28px,4vw,40px)}
+#floatingShapes{position:fixed;top:0;left:0;pointer-events:none;z-index:5}
+.wwd-mobile-spacer{display:none}
+@media(max-width:768px){
+  .frag-mobile{display:block}
+  #floatingShapes{z-index:6}
+  .wwd-mobile-spacer{display:block;height:250px;margin-top:-10px;margin-bottom:20px}
+  .converge-visual{right:-20px!important}
+  .cta-main-btn{max-width:90%!important}
+}
+@media(min-width:769px){
+  .cta-main-btn{padding:16px 40px;font-size:15px}
+}
+</style>
+
+<div class="divider"></div>
+
+<!-- ══ 3. WHAT WE DO ══ -->
+<section class="section" id="solutionSection" style="position:relative;overflow:hidden">
+<div class="container">
+  <div class="section__header reveal">
+    <p class="eyebrow" style="color:#3A7CA5;font-size:14px">OUR RESPONSE</p>
+    <h2>Fragmentation replaced<br><span style="color:#3A7CA5">with architecture.</span></h2>
+    <p>A single synchronized engine where commercialization strategy and operational leadership are designed as one system.</p>
+  </div>
+  <div class="wwd-mobile-spacer"></div>
+  <div class="wwd-grid reveal">
+    <div class="wwd-box reveal-d1">
+      <div class="wwd-box__icon">
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="8" r="4" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <circle cx="8" cy="24" r="4" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <circle cx="40" cy="24" r="4" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <circle cx="24" cy="40" r="4" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <line x1="24" y1="12" x2="24" y2="20" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+          <line x1="12" y1="24" x2="20" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+          <line x1="36" y1="24" x2="28" y2="24" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+          <line x1="24" y1="36" x2="24" y2="28" stroke="#3A7CA5" stroke-width="1.5" opacity=".35"/>
+          <circle cx="24" cy="24" r="4" stroke="#3A7CA5" stroke-width="1.5" opacity=".7"/>
+          <circle cx="24" cy="24" r="1.5" fill="#3A7CA5" opacity=".6"/>
+        </svg>
+      </div>
+      <h3 class="wwd-box__title">TRIAGE&#8482;</h3>
+      <p class="wwd-box__desc">Our decision-grade framework for commercialization strategy and feasibility assessment. Regulatory, clinical, market access, and capital strategy aligned into one coherent architecture.</p>
+      <a href="/triage" class="wwd-box__cta">Explore TRIAGE&#8482; &#8594;</a>
+    </div>
+    <div class="wwd-box reveal-d2">
+      <div class="wwd-box__icon">
+        <svg viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="6" width="14" height="14" rx="1" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+          <rect x="28" y="6" width="14" height="14" rx="1" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+          <rect x="6" y="28" width="14" height="14" rx="1" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+          <rect x="28" y="28" width="14" height="14" rx="1" stroke="#3A7CA5" stroke-width="1.5" opacity=".4"/>
+          <line x1="13" y1="20" x2="13" y2="28" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <line x1="35" y1="20" x2="35" y2="28" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <line x1="20" y1="13" x2="28" y2="13" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <line x1="20" y1="35" x2="28" y2="35" stroke="#3A7CA5" stroke-width="1.5" opacity=".5"/>
+          <line x1="20" y1="20" x2="28" y2="20" stroke="#3A7CA5" stroke-width="1" opacity=".25"/>
+          <line x1="20" y1="28" x2="28" y2="28" stroke="#3A7CA5" stroke-width="1" opacity=".25"/>
+          <line x1="20" y1="20" x2="20" y2="28" stroke="#3A7CA5" stroke-width="1" opacity=".25"/>
+          <line x1="28" y1="20" x2="28" y2="28" stroke="#3A7CA5" stroke-width="1" opacity=".25"/>
+          <circle cx="24" cy="24" r="2.5" fill="#3A7CA5" opacity=".6"/>
+        </svg>
+      </div>
+      <h3 class="wwd-box__title">Operational Stewardship</h3>
+      <p class="wwd-box__desc">Hands-on co-founding and operational leadership embedded within the venture from Day One. Commercialization strategy and execution moving as one continuous process.</p>
+      <a href="/dna" class="wwd-box__cta">See our DNA &#8594;</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<style>
+.wwd-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px;
+  margin-top:clamp(32px,4vw,48px);
+}
+.wwd-box{
+  background:var(--surf);
+  padding:clamp(28px,3.5vw,44px);
+  border-top:2px solid rgba(58,124,165,.12);
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+}
+.wwd-box:hover{
+  border-top-color:#3A7CA5;
+  transform:translateY(-3px);
+}
+.wwd-box__icon{
+  width:56px;
+  height:56px;
+  margin-bottom:20px;
+}
+.wwd-box__icon svg{width:100%;height:100%}
+.wwd-box__title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(18px,2vw,24px);
+  font-weight:400;
+  color:#3A7CA5;
+  margin-bottom:12px;
+}
+.wwd-box__desc{
+  font-size:clamp(14px,1.3vw,15px);
+  color:var(--tx);
+  line-height:1.9;
+  margin-bottom:20px;
+}
+.wwd-box__cta{
+  font-family:'Outfit',sans-serif;
+  font-size:13px;
+  font-weight:500;
+  color:#3A7CA5;
+  text-decoration:none;
+  transition:opacity .3s;
+}
+.wwd-box__cta:hover{opacity:.7}
+@media(max-width:600px){
+  .wwd-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div class="divider"></div>
+
+<!-- ══ 4. WHO WE SERVE ══ -->
+<section class="section section--alt" style="position:relative;overflow:hidden;background:rgba(15,19,30,.48)">
+<div class="container" style="position:relative">
+  <!-- Convergence visual -->
+  <svg class="converge-visual" style="position:absolute;right:clamp(10px,4vw,80px);top:-40px;width:clamp(320px,35vw,480px);height:auto;pointer-events:none;z-index:0" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".51" transform="rotate(5 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".51" transform="rotate(-5 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".37" transform="rotate(14 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".37" transform="rotate(-14 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".23" transform="rotate(23 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".23" transform="rotate(-23 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".13" transform="rotate(32 150 24)"/>
+    <line x1="150" y1="24" x2="150" y2="276" stroke="#3A7CA5" stroke-width="2.1" opacity=".13" transform="rotate(-32 150 24)"/>
+    <circle cx="150" cy="24" r="4.25" fill="#3A7CA5" opacity=".79"/>
+  </svg>
+  <div class="section__header reveal" style="position:relative;z-index:1">
+    <p class="eyebrow" style="color:#3A7CA5;font-size:14px">WHO WE BUILD WITH</p>
+    <h2>Science. Capital. Execution.<br><span style="color:#3A7CA5">One synchronized ecosystem.</span></h2>
+  </div>
+  <div class="audience-grid reveal">
+    <div class="audience-card reveal-d1">
+      <h4 class="audience-card__title">Inventors</h4>
+      <p class="audience-card__text">Equity-based co-founding for patented MedTech science. Synchronized commercialization strategy and embedded operational leadership from Day One.</p>
+      <a href="/inventors" class="audience-card__link">For Inventors &#8594;</a>
+    </div>
+    <div class="audience-card reveal-d2">
+      <h4 class="audience-card__title">Investors</h4>
+      <p class="audience-card__text">Ventures built for investability from the outset. Structured assumptions, coherent pathways, and disciplined capital logic before commitment.</p>
+      <a href="/investors" class="audience-card__link">For Investors &#8594;</a>
+    </div>
+    <div class="audience-card reveal-d3">
+      <h4 class="audience-card__title">Incubators</h4>
+      <p class="audience-card__text">Decision-grade diagnostics that resolve the architecture gaps holding your most promising MedTech ventures back. Credibility, raised structurally.</p>
+      <a href="/incubators" class="audience-card__link">For Incubators &#8594;</a>
+    </div>
+    <div class="audience-card reveal-d4">
+      <h4 class="audience-card__title">Partners</h4>
+      <p class="audience-card__text">Ventures that arrive structured, validated, and ready to execute. Domain expertise deployed at precise inflection points within one system.</p>
+      <a href="/partners" class="audience-card__link">For Partners &#8594;</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 5. PRE-FOOTER CTA ══ -->
+<section class="section cta-section" style="position:relative;overflow:hidden;padding-top:clamp(64px,8vw,100px);padding-bottom:clamp(64px,8vw,100px)">
+<div class="container">
+  <div class="reveal" style="text-align:center;position:relative;z-index:1">
+    <p class="eyebrow" style="text-align:center;color:#3A7CA5;font-size:14px;margin-bottom:20px !important">Next Step</p>
+    <h2 style="font-size:clamp(32px,5vw,56px);text-align:center;margin-top:0">Let's build <span style="color:#3A7CA5">what matters.</span></h2>
+    <div style="margin-top:clamp(32px,4vw,48px);text-align:center">
+      <a href="/contact" class="btn btn-primary cta-main-btn">Schedule a conversation</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer" role="contentinfo">
+<div class="container">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="Siaxen wordmark.svg" alt="Siaxen" style="height:20px;filter:brightness(0) invert(1);opacity:.6">
+      <p>MedTech venture studio replacing fragmented commercialization with synchronized architecture. Based in Brussels, Belgium.</p>
+    </div>
+    <div>
+      <div class="footer__col-title">COMPANY</div>
+      <div class="footer__links">
+        <a href="/about">About</a>
+        <a href="/dna">DNA</a>
+        <a href="/triage">TRIAGE&#8482;</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">FOR YOU</div>
+      <div class="footer__links">
+        <a href="/inventors">Inventors</a>
+        <a href="/investors">Investors</a>
+        <a href="/incubators">Incubators</a>
+        <a href="/partners">Partners</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">CONNECT</div>
+      <div class="footer__links">
+        <a href="https://linkedin.com/company/siaxen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:contact@siaxen.com">Email</a>
+        <p style="font-size:11px;color:var(--tx);opacity:.2;margin-top:12px">Brussels, Belgium</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2025 Siaxen. All rights reserved.</span>
+    <div class="footer__legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!-- Floating shapes for scroll transition -->
+<svg id="floatingShapes" viewBox="0 0 300 300" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+  <polygon id="sh0" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+  <polygon id="sh1" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+  <polygon id="sh2" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+  <polygon id="sh3" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+  <polygon id="sh4" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+  <polygon id="sh5" stroke="#3A7CA5" stroke-width="2.5" opacity=".5" fill="none"/>
+</svg>
+
+<script>
+(function(){
+  var problemEl = document.getElementById('problemSection');
+  var solutionEl = document.getElementById('solutionSection');
+  var svgEl = document.getElementById('floatingShapes');
+  var fragMobile = document.getElementById('fragMobile');
+  if(!problemEl || !solutionEl || !svgEl) return;
+
+  var polys = [];
+  for(var i=0;i<6;i++) polys.push(document.getElementById('sh'+i));
+
+  var fragPoints = [
+    [[43.4,38.9],[108.4,33.9],[112.6,80.4],[47.6,85.5]],
+    [[191,76],[194,25],[273,30],[270,81]],
+    [[24,180],[30,121],[91,127],[85,186]],
+    [[133.2,108.6],[212.1,105.6],[214.4,175.8],[135.5,178.8]],
+    [[195.8,206.6],[259.1,203.2],[265.2,271.2],[201.9,274.6]],
+    [[54,266],[57,222],[129,225],[127,270]]
+  ];
+
+  var isMobileInit = window.innerWidth <= 768;
+  var sq = isMobileInit ? 85 : 58;
+  var gap = isMobileInit ? 16 : 14;
+  var gx=(300-(sq*3+gap*2))/2, gy=(300-(sq*2+gap))/2;
+  var orgPoints = [];
+  for(var row=0;row<2;row++){
+    for(var col=0;col<3;col++){
+      var x=gx+col*(sq+gap), y=gy+row*(sq+gap);
+      orgPoints.push([[x,y],[x+sq,y],[x+sq,y+sq],[x,y+sq]]);
+    }
+  }
+
+  function lerp(a,b,t){return a+(b-a)*t;}
+  function easeInOut(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+
+  function pointsToString(pts){
+    var s='';
+    for(var i=0;i<pts.length;i++){
+      if(i>0)s+=' ';
+      s+=pts[i][0].toFixed(1)+','+pts[i][1].toFixed(1);
+    }
+    return s;
+  }
+
+  function update(){
+    var pRect = problemEl.getBoundingClientRect();
+    var sRect = solutionEl.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var vw = window.innerWidth;
+    var isMobile = vw <= 768;
+
+    var startPoint = pRect.bottom - vh * 0.7;
+    var endPoint = sRect.top - vh * 0.15;
+    var range = endPoint - startPoint;
+    var progress = 0;
+    if(range > 0) progress = (0 - startPoint) / range;
+    progress = Math.max(0, Math.min(1, progress));
+    var ease = easeInOut(progress);
+
+    if(isMobile){
+      var fragEl = document.getElementById('fragMobile');
+      var fragSvg = fragEl ? fragEl.querySelector('svg') : null;
+      var fragRect = fragSvg ? fragSvg.getBoundingClientRect() : null;
+
+      var svgWidth = fragRect ? fragRect.width : Math.min(360, vw * 0.85);
+      var svgHeight = fragRect ? fragRect.height : svgWidth;
+      var svgLeft = fragRect ? fragRect.left : (vw - svgWidth) / 2;
+      var pTargetY = fragRect ? fragRect.top + fragRect.height/2 : pRect.bottom - 150;
+
+      var spacer = document.querySelector('.wwd-mobile-spacer');
+      var endWidth = Math.min(300, vw * 0.8);
+      var sTargetY = spacer ? spacer.getBoundingClientRect().top + spacer.offsetHeight/2 : sRect.top + 200;
+
+      var curWidth = lerp(svgWidth, endWidth, ease);
+      var curHeight = lerp(svgHeight, endWidth, ease);
+      var curLeft = lerp(svgLeft, (vw - endWidth) / 2, ease);
+      var targetY = lerp(pTargetY, sTargetY, ease);
+
+      svgEl.style.width = curWidth + 'px';
+      svgEl.style.height = curHeight + 'px';
+      svgEl.style.left = curLeft + 'px';
+      svgEl.style.top = (targetY - curHeight/2) + 'px';
+
+      var scrolling = progress > 0.01;
+      svgEl.style.opacity = scrolling ? 1 : 0;
+      if(fragEl) fragEl.style.opacity = scrolling ? 0 : 1;
+
+      for(var i=0;i<6;i++) polys[i].setAttribute('stroke-width','2.5');
+    } else {
+      var svgWidth = Math.min(450, vw * 0.38);
+      var svgHeight = svgWidth;
+      var containerLeft = Math.max(0, (vw - 1280) / 2);
+      var containerRight = containerLeft + Math.min(vw, 1280);
+      var svgLeft = containerRight - 20 - svgWidth;
+
+      var pTargetY = pRect.top + pRect.height * 0.5;
+      var sTargetY = sRect.top + sRect.height * 0.3;
+      var targetY = lerp(pTargetY, sTargetY, ease);
+
+      svgEl.style.width = svgWidth + 'px';
+      svgEl.style.height = svgHeight + 'px';
+      svgEl.style.left = svgLeft + 'px';
+      svgEl.style.top = (targetY - svgHeight/2) + 'px';
+      svgEl.style.opacity = 1;
+
+      for(var i=0;i<6;i++) polys[i].setAttribute('stroke-width','2');
+
+      if(fragMobile) fragMobile.style.opacity = '';
+    }
+
+    for(var i=0;i<6;i++){
+      var fp = fragPoints[i];
+      var op = orgPoints[i];
+      var current = [];
+      for(var j=0;j<4;j++){
+        current.push([
+          lerp(fp[j][0], op[j][0], ease),
+          lerp(fp[j][1], op[j][1], ease)
+        ]);
+      }
+      polys[i].setAttribute('points', pointsToString(current));
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  if(document.readyState === 'complete') update();
+  else window.addEventListener('load', update);
+})();
+</script>
+
+<script src="main.js" defer></script>
+</body>
+</html>
